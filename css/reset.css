@@ -1,0 +1,37 @@
+/* Box sizing rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul, ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,figure,figcaption,blockquote,dl,dd {
+  margin: 0;
+}
+
+/* a tag */
+a, a:hover, a:active, a:focus, a:visited {
+    text-decoration: none;
+}
+
+/* imgs */
+.imgs {
+    overflow: hidden;
+}
+
+.imgs, .imgs img, .imgs span {
+    width: 100%;
+    display: block;
+}
+
+.imgs img, .imgs span{
+    height: 100%;
+}
+
+.imgs span {
+    background-color: #c1c1c1;
+}
