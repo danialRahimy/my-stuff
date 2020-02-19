@@ -66,7 +66,7 @@ window.dani = {
 
     run();
 
-}
+},
     // dani.activeContentPerLink(".tab","li",".row_custom2","data-id-relative","tab_active");
     
 	/**********
@@ -197,10 +197,21 @@ window.dani = {
 
     }
 
-}
-
+},
 	// let spanTag = new HTMLTag("span", "", "", "متن داخل اسپن"),
 	// divTag  = new HTMLTag("div", "tag-id", "class1 class2 class3", spanTag.outPut);
 	// document.getElementById("parent").innerHTML = divTag.outPut;
-	
+
+    removeClass : function removeClass (values) {
+        for (var i = 0 ; i < values.length ; i++){
+            var elms = document.querySelectorAll(values[i].selector);
+            for (var j = 0 ; j < elms.length ; j++){
+                if (elms[j].classList.contains(values[i].class)){
+                    elms[j].classList.remove(values[i].class);
+                }
+            }
+        }
+    },
+    // removeClass([{"selector": "#IDName", "class": "className"}]);
+
 };
