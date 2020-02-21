@@ -19,15 +19,29 @@ window.dani = {
     },
     // dani.activeLinkAsUrl([".className a",".className2 a"]);
 
-    randomCharacter: function randomCharacter(count = 10) {
+    randomCharacter: function randomCharacter(count = 10, type = "mix") {
+
     let letters = {
         "lower": ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     };
 
+    let numbers = [0,1,2,3,4,5,6,7,8,9];
+
     let outPut = "";
 
     for (let i = 0 ; i < count ; i++){
-        outPut += letters.lower[Math.floor(Math.random() * 26 )];
+        if (type === "mix"){
+            let which = Math.floor(Math.random() * 2 );
+            switch (which) {
+                case 1 : outPut += letters.lower[Math.floor(Math.random() * 26 )];
+                    break;
+                case 2 : outPut += numbers[Math.floor(Math.random() * 10 )];
+            }
+        }else if (type === "string"){
+            outPut += letters.lower[Math.floor(Math.random() * 26 )];
+        }else if (type === "number"){
+            outPut += numbers[Math.floor(Math.random() * 10 )];
+        }
     }
     return outPut;
 },
