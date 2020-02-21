@@ -214,4 +214,36 @@ window.dani = {
     },
     // removeClass([{"selector": "#IDName", "class": "className"}]);
 
+    empty: function empty(value){
+        if (value === ""){
+            return true
+        }
+        return false;
+    },
+    // empty(variableName);
+
+    getAllCookie: function getAllCookie(name){
+        let allCookieArray = document.cookie.split(";");
+        let allCookie = [];
+        let targetCookie = "";
+        for (let i = 0 ; i < allCookieArray.length ; i++){
+            let cookieArray = allCookieArray[i].split("=");
+            if (!dani.empty(name)){
+                if (cookieArray[0] === name){
+                    targetCookie = cookieArray[1];
+                }
+            }
+            let data = {
+                "name" : cookieArray[0],
+                "value" : cookieArray[1],
+            };
+            allCookie.push(data);
+        }
+        if (!dani.empty(targetCookie)){
+            return targetCookie;
+        }
+        return allCookie;
+    }
+    // getAllCookie(cookieName); /*or get all cookies =>*/ getAllCookie();
+
 };
