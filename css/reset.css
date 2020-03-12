@@ -13,25 +13,31 @@ body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,figure,figcaption,blockquote,dl,dd {
   margin: 0;
 }
 
+/* prevent IE9 (and earlier) */
+a > img {
+    border: 0;
+}
+
 /* a tag */
 a, a:hover, a:active, a:focus, a:visited {
     text-decoration: none;
+    color: inherit;
 }
 
-/* imgs */
-.imgs {
+/* fr-img */
+.fr-img {
     overflow: hidden;
 }
 
-.imgs, .imgs img, .imgs span {
+.fr-img, .fr-img img, .fr-img .fr-img-no-img {
     width: 100%;
     display: block;
 }
 
-.imgs img, .imgs span{
+.fr-img img, .fr-img .fr-img-no-img{
     height: 100%;
 }
 
-.imgs span {
+.fr-img .fr-img-no-img {
     background-color: #c1c1c1;
 }
